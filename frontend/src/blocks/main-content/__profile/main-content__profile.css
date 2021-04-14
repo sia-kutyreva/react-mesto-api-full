@@ -1,0 +1,11 @@
+/*Стили элемента блока*/
+.main-content__profile {
+  margin-bottom: 50px;
+}
+
+/*Медиа-запрос для регулирования свойств при разном разрешении экрана*/
+@media screen and (max-width: 320px) {
+  .main-contant__profile {
+    margin-bottom: 36px;
+  }
+}

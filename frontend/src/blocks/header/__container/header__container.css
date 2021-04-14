@@ -1,0 +1,4 @@
+/*Стили элемента блока*/
+.header__container {
+  display: flex;
+}

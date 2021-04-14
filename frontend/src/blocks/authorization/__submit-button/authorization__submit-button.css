@@ -1,0 +1,32 @@
+/*Стили элемента блока*/
+.authorization__submit-button {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+  color: #000000;
+  width: 100%;
+  height: 50.15px;
+  outline: none;
+  border: 0;
+  background: white;
+  border-radius: 2px;
+  padding: 0;
+  align-self: center;
+  transition: opacity 0.7s ease;
+}
+
+/*Псевдоклассы для изменения стилей при взаимодействии с пользователем*/
+.authorization__submit-button:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.authorization__submit-button:active {
+  outline: none;
+}
+
+.authorization__submit-button:focus {
+  outline: none;
+}

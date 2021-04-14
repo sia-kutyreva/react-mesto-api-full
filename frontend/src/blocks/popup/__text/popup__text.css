@@ -1,0 +1,22 @@
+/*Стили элемента блока*/
+.popup__text {
+  margin: 30px 0 26px 0;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 29px;
+  color: #000000;
+  align-self: center;
+  text-align: center;
+}
+
+/*Медиа-запрос для регулирования свойств при разном разрешении экрана*/
+@media screen and (max-width: 320px) {
+  .popup__text {
+    font-style: normal;
+    font-weight: 900;
+    font-size: 18px;
+    line-height: 22px;
+    margin: 0 0 36px 0;
+  }
+}

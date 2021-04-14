@@ -1,0 +1,18 @@
+/*Стили элемента блока*/
+.profile__name {
+  font-weight: 500;
+  font-size: 42px;
+  line-height: 56px;
+  margin: 0;
+  transition: font-size 0.8s ease;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/*Медиа-запросы для регулирования свойств при разном разрешении экрана*/
+@media screen and (max-width: 380px) {
+  .profile__name {
+    font-size: 27px;
+  }
+}

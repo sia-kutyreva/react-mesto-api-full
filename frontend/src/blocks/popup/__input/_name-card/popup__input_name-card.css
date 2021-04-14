@@ -1,0 +1,11 @@
+/*Стили элемента блока*/
+.popup__input_name-card {
+  margin: 0 0 30px 0;  
+}
+
+/*Медиа-запрос для регулирования свойств при разном разрешении экрана*/
+@media screen and (max-width: 320px) {
+  .popup__input_name-card {
+    margin: 0 0 20px 0;
+  }
+}  

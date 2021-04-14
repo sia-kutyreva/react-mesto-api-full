@@ -1,0 +1,6 @@
+/*Медиа-запросы для регулирования свойств при разном разрешении экрана*/
+@media screen and (max-width: 320px) {
+  .profile__edit-button-img {
+    width: 7.5px;
+  }
+}

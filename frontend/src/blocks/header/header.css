@@ -1,0 +1,28 @@
+@import url('./__title/header__title.css');
+@import url('./__container/header__container.css');
+@import url('./__email/header__email.css');
+
+/*Основные стили блока*/
+.header {
+  display: flex;
+  justify-content: space-between;
+  width: 68.9%;
+  border-bottom: 1px solid rgba(84, 84, 84, 0.7);
+  transition: width 0.7s ease;
+  box-sizing: border-box;
+  padding: 0 0 40.6px 0;
+}
+
+/*Медиа-запросы для регулирования свойств при разном разрешении экрана*/
+@media screen and (max-width: 1024px) {
+  .header {
+    width: 86%;
+  }
+}
+
+@media screen and (max-width: 882px) {
+  .header {
+    width: 100%;
+    padding: 0 30px 31.6px 30px;
+  }
+}

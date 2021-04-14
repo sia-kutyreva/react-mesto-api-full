@@ -1,0 +1,38 @@
+/*Стили элемента блока*/
+.profile__avatar-overlay {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: opacity 1s;
+  margin: 0 30px 0 0;
+}
+
+/*Создание псевдоэлемента для эффекта наведения*/
+.profile__avatar-overlay:before {
+  content: '';
+  height: 120px;
+  width: 120px;
+  position: absolute;
+  display: block;
+  overflow: hidden;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-color: rgba(0, 0, 0, 0.8);
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1s;
+  background-image: url('../../../images/AvatarVector.svg');
+}
+
+.profile__avatar-overlay:hover:before {
+  opacity: 1;
+}
+
+/*Медиа-запрос для регулирования свойств при разном разрешении экрана*/
+@media screen and (max-width: 550px) {
+  .profile__avatar-overlay {
+    margin: 0 0 25px 0;
+  }
+}

@@ -1,0 +1,11 @@
+/*Стили элемента блока*/
+.header__email {
+  font-family: inherit;
+  color: white;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 22px;
+  text-decoration: none;
+  margin: 0 24px 0 0;
+}

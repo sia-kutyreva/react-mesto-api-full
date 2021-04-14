@@ -1,0 +1,27 @@
+/*Стили элемента блока*/
+.element__like-count {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 16px;
+  text-align: center;
+  margin: 0;
+  color: #000000;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/*Псевдоклассы для изменения стилей при взаимодействии с пользователем
+.element__like-button:hover {
+  cursor: pointer;
+  opacity: .6;
+}
+
+.element__like-button:active {
+  outline: none;
+}
+
+.element__like-button:focus {
+  outline: none;
+}*/

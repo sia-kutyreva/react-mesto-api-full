@@ -1,0 +1,40 @@
+/*Стили элемента блока*/
+.profile__edit-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 24px;
+  height: 24px;
+  border: 1px solid #FFFFFF;
+  box-sizing: border-box;
+  border-radius: 0;
+  background: none;
+  margin: 0 0 10px 0;
+  grid-column: 2/3;
+  grid-row: 1/2;
+  align-self: end;
+  transition: opacity 0.7s ease;
+}
+
+/*Псевдоклассы для изменения стилей при взаимодействии с пользователем*/
+.profile__edit-button:hover {
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.profile__edit-button:active {
+  outline: none;
+}
+
+.profile__edit-button:focus {
+  outline: none;
+}
+
+/*Медиа-запрос для регулирования свойств при разном разрешении экрана*/
+@media screen and (max-width: 320px) {
+  .profile__edit-button {
+    width: 18px;
+    height: 19.57px;
+    margin: 0 0 18px 0;
+  }
+}

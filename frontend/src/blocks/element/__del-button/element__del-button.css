@@ -1,0 +1,27 @@
+/*Стили элемента блока*/
+.element__del-button {
+  position: absolute;
+  top: 18px;
+  right: 15px;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  padding: 0;
+  transition: opacity .4s ease;
+  width: 18px;
+  height: 19.3px;
+}
+
+/*Псевдоклассы для изменения стилей при взаимодействии с пользователем*/
+.element__del-button:hover {
+  cursor: pointer;
+  opacity: .6;
+}
+
+.element__del-button:active {
+  outline: none;
+}
+
+.element__del-button:focus {
+  outline: none;
+}

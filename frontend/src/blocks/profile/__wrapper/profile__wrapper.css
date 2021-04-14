@@ -1,0 +1,21 @@
+/*Стили элемента блока*/
+.profile__wrapper {
+  width: calc(100% - 150px);
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+/*Медиа-запросы для регулирования свойств при разном разрешении экрана*/
+@media screen and (max-width: 711px) {
+  .profile__wrapper {
+    margin-bottom: 36px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .profile__wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+}

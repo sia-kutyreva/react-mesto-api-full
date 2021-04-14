@@ -1,0 +1,9 @@
+/*Модификатор для открытия/закрытия попапа*/
+.popup_open-close {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0s;
+}

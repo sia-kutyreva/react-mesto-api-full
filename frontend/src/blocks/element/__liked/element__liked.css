@@ -1,0 +1,4 @@
+/*Стили элемента блока*/
+.element__liked {
+  background-image: url('../../../images/element-like-click.svg');
+}

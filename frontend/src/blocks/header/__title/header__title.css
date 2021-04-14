@@ -1,0 +1,21 @@
+/*Стили элемента блока*/
+.header__title {
+  font-family: inherit;
+  color: white;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 22px;
+  text-decoration: none;
+  transition: font-size 0.7s ease;
+}
+
+/*Медиа-запросы для регулирования свойств при разном разрешении экрана*/
+
+@media screen and (max-width: 500px) {
+  .header__title {
+    font-size: 14px;
+    line-height: 17px;
+    font-weight: normal;
+  }
+}

@@ -1,0 +1,8 @@
+@import url('./_hidden/element__del_hidden.css');
+
+/*Стили элемента блока*/
+.element__del {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}

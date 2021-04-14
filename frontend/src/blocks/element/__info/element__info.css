@@ -1,0 +1,11 @@
+/*Стили элемента блока*/
+.element__info {
+  background: #FFFFFF;
+  padding-right: 15px;
+  padding-left: 21px;
+  padding-top: 25px;
+  display: flex;
+  justify-content: space-between;
+  white-space: nowrap;
+  overflow: hidden;
+}

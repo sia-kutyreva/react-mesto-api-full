@@ -1,0 +1,11 @@
+/*Стили элемента блока*/
+.popup__img-title {
+  margin: 0;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 15px;
+  color: #FFFFFF;
+  grid-column: 1/2;
+  grid-row: 3/4;
+}

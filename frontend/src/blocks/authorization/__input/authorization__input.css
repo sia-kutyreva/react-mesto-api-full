@@ -1,0 +1,36 @@
+
+
+/*Стили элемента блока*/
+.authorization__input {
+  background-color: black;
+  color: #CCCCCC;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  border: 0;
+  border-bottom: 2px solid #CCCCCC;
+  width: 100%;
+  height: 27.3px;
+  padding: 0;
+  margin-bottom: 30px;
+}
+
+/*Псевдоклассы для изменения стилей при взаимодействии с пользователем*/
+.authorization__input:active {
+  outline: 0;
+}
+
+.authorization__input:focus {
+  outline: 0;
+}
+
+/*Медиа-запрос для регулирования свойств при разном разрешении экрана*/
+@media screen and (max-width: 500px) {
+  .authorization__input {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 15px;
+  }
+}  

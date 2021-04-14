@@ -1,0 +1,6 @@
+/*Стили модификатора элемента блока для попапа карточек*/
+.popup__grid_type_card {
+  grid-template-columns: repeat(2, min-content);
+  grid-template-rows: repeat(3, min-content);
+  margin: 0;
+}

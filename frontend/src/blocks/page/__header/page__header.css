@@ -1,0 +1,13 @@
+/*Микс стилей для создания отступа*/
+.page__header {
+  margin: 45px 0 60px 0;
+  transition: margin 0.7s ease;
+}
+
+/*Медиа-запросы для регулирования свойств при разном разрешении экрана*/
+
+@media screen and (max-width: 500px) {
+  .page__header {
+    margin: 28px 0 40px 0;;
+  }
+}

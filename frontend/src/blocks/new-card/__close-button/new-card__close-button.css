@@ -1,0 +1,25 @@
+/*Стили элемента блока*/
+.new-card__close-button {
+  width: min-content;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  padding: 0;
+  transition: opacity 0.7s ease;
+  grid-column: 2/3;
+  grid-row: 1/2;
+}
+
+/*Псевдоклассы для изменения стилей при взаимодействии с пользователем*/
+.new-card__close-button:hover {
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.new-card__close-button:active {
+  outline: none;
+}
+
+.new-card__close-button:focus {
+  outline: none;
+}

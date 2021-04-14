@@ -1,0 +1,28 @@
+/*Стили элемента блока*/
+.popup__elements {
+  width: 100%;
+  padding: 34px 36px 36px;
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  background: #FFFFFF;
+  border-radius: 10px;
+  box-sizing: border-box;
+  grid-column: 1/2;
+  grid-row: 2/3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/*Медиа-запрос для регулирования свойств при разном разрешении экрана*/
+@media screen and (max-width: 500px) {
+  .popup__elements {
+    padding: 20px;
+    align-self: center;
+    justify-self: center;
+  }
+}
+@media screen and (max-width: 320px) {
+  .popup__elements {
+    padding: 20px;
+  }
+}

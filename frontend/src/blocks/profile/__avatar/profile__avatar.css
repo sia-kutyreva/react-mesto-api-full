@@ -1,0 +1,17 @@
+/*Стили элемента блока*/
+.profile__avatar {
+  width: 120px;
+  height: 120px;
+  object-position: center;
+  object-fit: cover;
+  overflow: hidden;
+  border-radius: 50%;
+  margin: 0 30px 0 0;
+}
+
+/*Медиа-запрос для регулирования свойств при разном разрешении экрана*/
+@media screen and (max-width: 550px) {
+  .profile__avatar {
+    margin: 0 0 25px 0;
+  }
+}

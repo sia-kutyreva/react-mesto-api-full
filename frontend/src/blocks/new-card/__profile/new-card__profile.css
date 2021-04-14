@@ -1,0 +1,14 @@
+/*Стили элемента блока*/
+.new-card__profile {
+  border: 0;
+  max-width: 100%;
+  padding: 0;
+  margin: 0 0 48px 0;
+}
+
+/*Медиа-запрос для регулирования свойств при разном разрешении экрана*/
+@media screen and (max-width: 320px) {
+  .new-card__profile {
+    margin: 0 0 36px 0;
+  }
+}

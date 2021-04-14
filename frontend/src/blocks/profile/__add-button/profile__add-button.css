@@ -1,0 +1,35 @@
+/*Стили элемента блока*/
+.profile__add-button {
+  border: solid 2px white;
+  box-sizing: border-box;
+  border-radius: 2px;
+  width: 150px;
+  height: 50px;
+  background: none;
+  padding: 0;
+  min-height: 50px;
+  align-self: center;
+  transition: opacity 0.7s ease;
+}
+
+/*Псевдоклассы для изменения стилей при взаимодействии с пользователем*/
+.profile__add-button:hover {
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.profile__add-button:active {
+  outline: none;
+}
+
+.profile__add-button:focus {
+  outline: none;
+}
+
+/*Медиа-запрос для регулирования свойств при разном разрешении экрана*/
+@media screen and (max-width: 711px) {
+  .profile__add-button {
+    width: 282px;
+    height: 54.37px;
+  }
+}

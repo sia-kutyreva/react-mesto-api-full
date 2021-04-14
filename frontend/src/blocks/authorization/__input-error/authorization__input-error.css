@@ -1,0 +1,11 @@
+@import url('./_active/popup__input-error_active.css');
+
+/*Стили элемента блока*/
+.authorization__input-error {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 15px;
+  color: #FF0000;
+}

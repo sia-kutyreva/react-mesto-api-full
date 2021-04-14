@@ -1,0 +1,23 @@
+/*Подключение стилей элементов блока*/
+@import url('./__img/element__img.css');
+@import url('./__del-button/element__del-button.css');
+@import url('./__del/element__del.css');
+@import url('./__info/element__info.css');
+@import url('./__text/element__text.css');
+@import url('./__like-element/element__like-element.css');
+@import url('./__like-button/element__like-button.css');
+@import url('./__liked/element__liked.css');
+@import url('./__like-count/element__like-count.css');
+
+/*Основные стили блока*/
+.element {
+  position: relative;
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  background: #FFFFFF;
+  width: 282px;
+  height: 361px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}

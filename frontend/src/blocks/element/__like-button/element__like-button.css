@@ -1,0 +1,26 @@
+/*Стили элемента блока*/
+.element__like-button {
+  border: 0;
+  border-radius: 0;
+  background-image: url('../../../images/element-like.svg');
+  background-color: white;
+  padding: 0;
+  transition: opacity .4s ease;
+  width: 20.76px;
+  height: 18.13px;
+  align-self: center;
+}
+
+/*Псевдоклассы для изменения стилей при взаимодействии с пользователем*/
+.element__like-button:hover {
+  cursor: pointer;
+  opacity: .6;
+}
+
+.element__like-button:active {
+  outline: none;
+}
+
+.element__like-button:focus {
+  outline: none;
+}

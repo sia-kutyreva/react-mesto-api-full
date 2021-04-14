@@ -1,0 +1,7 @@
+/*Медиа-запрос для регулирования свойств при разном разрешении экрана*/
+@media screen and (max-width: 700px) {
+  .new-card__close-button-img {
+    width: 30px;
+    height: 30px;
+  }
+}

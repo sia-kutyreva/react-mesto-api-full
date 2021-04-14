@@ -1,0 +1,13 @@
+/*Медиа-запрос для регулирования свойств при разном разрешении экрана*/
+@media screen and (max-width: 700px) {
+  .popup__close-button-img {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .popup__close-button-img {
+    margin-bottom: 27px;
+  }
+}

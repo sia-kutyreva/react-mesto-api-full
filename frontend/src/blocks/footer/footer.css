@@ -1,0 +1,21 @@
+/*Подключение стилей элементов блока*/
+@import url('./__copyright/footer__copyright.css');
+
+/*Основные стили блока*/
+.footer {
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  width: 68.9%;
+}
+
+/*Медиа-запросы для регулирования свойств при разном разрешении экрана*/
+@media screen and (max-width: 1024px) {
+  .footer {
+    width: 86%;
+  }
+}
+
+@media screen and (max-width: 882px) {
+  .footer {
+    width: 95%;
+  }
+}

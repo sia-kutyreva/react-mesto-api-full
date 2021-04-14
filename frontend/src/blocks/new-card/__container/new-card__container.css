@@ -1,0 +1,18 @@
+/*Стили элемента блока*/
+.new-card__container {
+  width: 100%;
+  padding: 34px 36px 36px;
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  background: #FFFFFF;
+  border-radius: 10px;
+  box-sizing: border-box;
+  grid-column: 1/2;
+  grid-row: 2/3;
+}
+
+/*Медиа-запрос для регулирования свойств при разном разрешении экрана*/
+@media screen and (max-width: 320px) {
+  .new-card__container {
+    padding: 20px;
+  }
+}

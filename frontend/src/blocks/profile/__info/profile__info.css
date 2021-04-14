@@ -1,0 +1,27 @@
+/*Стили элемента блока*/
+.profile__info {
+  max-width: calc(100% - 200px);
+  color: #FFFFFF;
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  font-style: normal;
+  align-self: center;
+  display: grid;
+  grid-template-columns: minmax(max-content, 400px), max-content;
+  grid-template-rows: repeat(2, max-content);
+  column-gap: 17px;
+  row-gap: 8px;
+  margin-right: 42px;
+}
+
+/*Медиа-запросы для регулирования свойств при разном разрешении экрана*/
+@media screen and (max-width: 550px) {
+  .profile__info {
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .profile__info {
+    column-gap: 10px;
+  }
+}

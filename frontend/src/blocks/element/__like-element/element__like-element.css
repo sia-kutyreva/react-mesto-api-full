@@ -1,0 +1,9 @@
+/*Стили элемента блока*/
+.element__like-element {
+  height: 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  white-space: nowrap;
+  overflow: hidden;
+}

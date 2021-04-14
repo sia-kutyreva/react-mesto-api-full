@@ -1,0 +1,8 @@
+/*Подключение стилей элементов блока*/
+@import url('./__liked/section-elements__liked.css');
+
+/*Основные стили блока*/
+.section-elements {
+  width: 100%;
+  
+}

@@ -1,0 +1,16 @@
+/*Стили элемента блока*/
+.popup__image {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  margin: 26px 0 0 0;
+  grid-column: 1/2;
+  grid-row: 2/3;
+}
+
+/*Медиа-запросы для регулирования свойств при разном разрешении экрана*/
+@media screen and (max-width: 1024px) {
+  .popup__image {
+    width: 86%;
+  }
+}

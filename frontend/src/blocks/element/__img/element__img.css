@@ -1,0 +1,11 @@
+/*Стили элемента блока*/
+.element__img {
+  width: 282px;
+  height: 282px;
+  object-fit: cover;
+}
+
+/*Стили элемента блока при наведении курсора*/
+.element__img:hover {
+  cursor: pointer;
+}
