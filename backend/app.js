@@ -4,6 +4,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const { celebrate, Joi, errors } = require('celebrate');
+const cors = require('cors');
 
 const NotFoundError = require('./errors/not-found-err');
 
@@ -16,6 +17,20 @@ const { requestLogger, errorLogger } = require('./middlewere/logger');
 
 const app = express();
 const { PORT = 3000 } = process.env;
+
+const corsOptions = {
+  origin: [
+    'http://mesto.master.nomoredomains.icu',
+    'https://mesto.master.nomoredomains.icu',
+  ],
+  methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE'],
+  preflightContinue: false,
+  optionsSuccessStatus: 204,
+  allowedHeaders: ['Content-Type', 'Authorization', 'Origin'],
+  credentials: true,
+};
+
+app.use('*', cors(corsOptions));
 
 mongoose.connect('mongodb://localhost:27017/mestodb', {
   useNewUrlParser: true,
