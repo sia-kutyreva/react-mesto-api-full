@@ -18,13 +18,10 @@ const { requestLogger, errorLogger } = require('./middlewere/logger');
 const app = express();
 const { PORT = 3000 } = process.env;
 
-app.options('*', cors());
-
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Methods', 'GET,HEAD,PUT,PATCH,POST,DELETE');
-  next();
-});
+const corsOptions = {
+  origin: 'https://mesto.master.nomoredomains.icu',
+  credentials: true,
+};
 
 mongoose.connect('mongodb://localhost:27017/mestodb', {
   useNewUrlParser: true,
@@ -32,6 +29,8 @@ mongoose.connect('mongodb://localhost:27017/mestodb', {
   useFindAndModify: false,
   useUnifiedTopology: true,
 });
+
+app.use('*', cors(corsOptions));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
