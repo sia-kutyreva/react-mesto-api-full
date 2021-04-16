@@ -8,13 +8,9 @@ const {
   getCurrentUser,
 } = require('../controllers/users');
 
-usersRouter.get('/users', celebrate({
-  headers: Joi.object().keys({}).unknown(true),
-}), getUsers);
+usersRouter.get('/users', getUsers);
 
-usersRouter.get('/users/me', celebrate({
-  headers: Joi.object().keys({}).unknown(true),
-}), getCurrentUser);
+usersRouter.get('/users/me', getCurrentUser);
 
 usersRouter.get('/users/:userId', celebrate({
   headers: Joi.object().keys({}).unknown(true),
@@ -24,7 +20,6 @@ usersRouter.get('/users/:userId', celebrate({
 }), getUserById);
 
 usersRouter.patch('/users/me', celebrate({
-  headers: Joi.object().keys({}).unknown(true),
   body: Joi.object().keys({
     name: Joi.string().required().min(2).max(30),
     about: Joi.string().required().min(2).max(30),

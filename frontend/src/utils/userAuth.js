@@ -1,4 +1,4 @@
-export const BASE_URL = 'https://auth.nomoreparties.co';
+export const BASE_URL = 'https://api.mesto.master.nomoredomains.icu';
 
 export const register = (data) => {
   return fetch(`${BASE_URL}/signup`, {
