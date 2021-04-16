@@ -22,6 +22,9 @@ const corsOptions = {
   origin: [
     'http://mesto.master.nomoredomains.icu',
     'https://mesto.master.nomoredomains.icu',
+    'https://api.mesto.master.nomoredomains.icu',
+    'http://api.mesto.master.nomoredomains.icu',
+    'http://localhost:3000',
   ],
   methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE'],
   preflightContinue: false,
