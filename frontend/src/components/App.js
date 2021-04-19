@@ -41,9 +41,12 @@ function App() {
   }, [loggedIn, history])
 
   function handleCardLike(card) {
-    const isLiked = card.likes.some(i => i._id === currentUser._id);
+
+    const isLiked = card.likes.some(i => i === currentUser._id);
+    console.log(isLiked, currentUser._id);
     api.changeLikeCardStatus(card._id, isLiked, localStorage.getItem('jwt'))
       .then((newCard) => {
+        console.log(newCard);
         const newCards = cards.map((c) => c._id === card._id ? newCard : c);
         setCards(newCards);
       })
@@ -51,7 +54,7 @@ function App() {
   }
 
   function handleCardDelete(card) {
-    const isOwn = card.owner._id === currentUser._id;
+    const isOwn = card.owner === currentUser._id;
     if (isOwn) {
       setIsDeleteCardPopup(true);
       setDeleteCard(card);
@@ -137,10 +140,13 @@ function App() {
 
   function onRegister(data) {
     userAuth.register( data )
-      .then(() => {
+      .then((res) => {
         setIsInfoTooltipOpen(true);
         setSuccessfulRegistration(true);
-        history.push('/sign-in');
+        setLoggedIn(true);
+        localStorage.setItem('jwt', res.token);
+        setLoggedInUserEmail(res.email);
+        history.push('/');
       })   
       .catch((err) => {
         console.log(err);
@@ -154,6 +160,7 @@ function App() {
       .then((res) => {
         setLoggedIn(true);
         localStorage.setItem('jwt', res.token);
+        setLoggedInUserEmail(res.email);
         history.push("/user-cards");
       })
       .catch((err) => {

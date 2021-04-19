@@ -109,7 +109,7 @@ class Api {
 
   changeLikeCardStatus(cardId, isLiked, token) {
     if (!isLiked) {
-      return fetch(`${this._baseUrl}/cards/likes/${cardId}`, {
+      return fetch(`${this._baseUrl}/cards/${cardId}/likes`, {
         method: 'PUT',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -118,7 +118,7 @@ class Api {
       })
         .then(res => this._getResponseData(res))
     } else {
-      return fetch(`${this._baseUrl}/cards/likes/${cardId}`, {
+      return fetch(`${this._baseUrl}/cards/${cardId}/likes`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${token}`,
