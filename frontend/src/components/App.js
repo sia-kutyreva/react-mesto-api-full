@@ -169,8 +169,10 @@ function App() {
       userAuth.getContent(jwt)
         .then((res) => {
           if (res) {
+            console.log(res, 'response check token');
             setLoggedIn(true);
-            setLoggedInUserEmail(res.data.email);
+            console.log(res);
+            setLoggedInUserEmail(res.email);
             history.push("/user-cards");
           }
         })
