@@ -145,6 +145,7 @@ function App() {
         setSuccessfulRegistration(true);
         setLoggedIn(true);
         localStorage.setItem('jwt', res.token);
+        setCurrentUser(res);
         setLoggedInUserEmail(res.email);
         history.push('/');
       })   
@@ -160,6 +161,7 @@ function App() {
       .then((res) => {
         setLoggedIn(true);
         localStorage.setItem('jwt', res.token);
+        setCurrentUser(res);
         setLoggedInUserEmail(res.email);
         history.push("/user-cards");
       })
@@ -177,6 +179,7 @@ function App() {
         .then((res) => {
           if (res) {
             console.log(res, 'response check token');
+            setCurrentUser(res);
             setLoggedIn(true);
             console.log(res);
             setLoggedInUserEmail(res.email);
