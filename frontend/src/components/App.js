@@ -43,10 +43,8 @@ function App() {
   function handleCardLike(card) {
 
     const isLiked = card.likes.some(i => i === currentUser._id);
-    console.log(isLiked, currentUser._id);
     api.changeLikeCardStatus(card._id, isLiked, localStorage.getItem('jwt'))
       .then((newCard) => {
-        console.log(newCard);
         const newCards = cards.map((c) => c._id === card._id ? newCard : c);
         setCards(newCards);
       })
@@ -116,7 +114,12 @@ function App() {
         setCurrentUser(userData);
         closeAllPopups();
       })
-      .catch((err) => console.log(`Ошибка обновления данных пользователя: ${err}`))
+      .catch((err) => {
+        closeAllPopups();
+        console.log(`Ошибка обновления данных пользователя: ${err}`);
+        setIsInfoTooltipOpen(true);
+        setSuccessfulRegistration(false);
+      })
   }
 
   function handleUpdateAvatar(e) {
@@ -125,7 +128,12 @@ function App() {
         setCurrentUser(userData);
         closeAllPopups();
       })
-      .catch((err) => console.log(`Ошибка обновления данных пользователя: ${err}`))
+      .catch((err) => {
+        closeAllPopups();
+        console.log(`Ошибка обновления данных пользователя: ${err}`);
+        setIsInfoTooltipOpen(true);
+        setSuccessfulRegistration(false);
+      })
   }
 
   function handleAddPlace(data) {
@@ -134,7 +142,12 @@ function App() {
         setCards([newCard, ...cards]);
         closeAllPopups();
       })
-      .catch((err) => console.log(`Ошибка добавления новой карточки: ${err}`))
+      .catch((err) => {
+        closeAllPopups();
+        console.log(`Ошибка добавления новой карточки: ${err}`);
+        setIsInfoTooltipOpen(true);
+        setSuccessfulRegistration(false);
+      })
       
   }
 
@@ -178,10 +191,8 @@ function App() {
       userAuth.getContent(jwt)
         .then((res) => {
           if (res) {
-            console.log(res, 'response check token');
             setCurrentUser(res);
             setLoggedIn(true);
-            console.log(res);
             setLoggedInUserEmail(res.email);
             history.push("/user-cards");
           }

@@ -64,12 +64,13 @@ function EditProfilePopup({ isOpen, onClose, onUpdateUser, closePopupOverlay, re
           placeholder="Профессия" 
           name="profession" 
           minLength="2" 
-          maxLength="200" 
+          maxLength="30" 
           required 
         />
         <span className='popup__input-error popup__input-error_active' id='profession-input-error'></span>
       </fieldset>
-    </PopupWithForm>)
+    </PopupWithForm>
+    )
   
 }
 
