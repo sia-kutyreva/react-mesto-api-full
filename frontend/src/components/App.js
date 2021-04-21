@@ -28,16 +28,15 @@ function App() {
   const history = useHistory();
 
   React.useEffect(() => {
-    Promise.all([api.getUserInfo(localStorage.getItem('jwt')), api.getInitialCards(localStorage.getItem('jwt'))])
+    checkToken();
+    if (setLoggedIn) {
+      Promise.all([api.getUserInfo(localStorage.getItem('jwt')), api.getInitialCards(localStorage.getItem('jwt'))])
       .then(([userInfo, cardsResult]) => {
         setCards(cardsResult);
         setCurrentUser(userInfo);
       })
       .catch((err) => console.log(`Ошибка получении данных: ${err}`))
-  }, []);
-
-  React.useEffect(() => {
-    checkToken();
+    }
   }, [loggedIn, history])
 
   function handleCardLike(card) {
@@ -152,6 +151,7 @@ function App() {
   }
 
   function onRegister(data) {
+    console.log(data)
     userAuth.register( data )
       .then((res) => {
         setIsInfoTooltipOpen(true);
@@ -193,6 +193,7 @@ function App() {
           if (res) {
             setCurrentUser(res);
             setLoggedIn(true);
+
             setLoggedInUserEmail(res.email);
             history.push("/user-cards");
           }
