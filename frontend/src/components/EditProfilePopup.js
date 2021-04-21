@@ -52,7 +52,7 @@ function EditProfilePopup({ isOpen, onClose, onUpdateUser, closePopupOverlay, re
           placeholder="Имя" 
           name="name" 
           minLength="2" 
-          maxLength="40" 
+          maxLength="30" 
           required 
         />
         <span className='popup__input-error popup__input-error_active' id='name-input-error'></span>
