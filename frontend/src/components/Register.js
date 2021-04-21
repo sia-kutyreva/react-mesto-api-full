@@ -8,6 +8,7 @@ function Register({ onRegister }) {
   
   function handleSubmit(evt) {
     evt.preventDefault();
+    console.log({userPassword, userEmail})
     onRegister({userPassword, userEmail});
   }
 
