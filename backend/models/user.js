@@ -23,7 +23,7 @@ const userSchema = new mongoose.Schema({
       validator(link) {
         let valid = false;
         const space = /\S/.test(link);
-        const mainLink = /(https?:\/\/)?([\w\\.]+)\.([a-z]{2,6}\.?)(\/[\w\\.]*)*\/?$\//.test(link);
+        const mainLink = /^((http|https):\/\/)(www\.)?([\w\W\d]{1,})(\.)([a-zA-Z]{1,10})([\w\W\d]{1,})?$/.test(link);
         if (!space && mainLink) {
           valid = true;
         }

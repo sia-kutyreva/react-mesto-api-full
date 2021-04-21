@@ -13,7 +13,6 @@ usersRouter.get('/users', getUsers);
 usersRouter.get('/users/me', getCurrentUser);
 
 usersRouter.get('/users/:userId', celebrate({
-  headers: Joi.object().keys({}).unknown(true),
   params: Joi.object().keys({
     userId: Joi.string().length(24).hex(),
   }),
@@ -27,9 +26,8 @@ usersRouter.patch('/users/me', celebrate({
 }), updateUserProfile);
 
 usersRouter.patch('/users/me/avatar', celebrate({
-  headers: Joi.object().keys({}).unknown(true),
   body: Joi.object().keys({
-    avatar: Joi.string().pattern(new RegExp(/^(http|https):\/\/(www\.)?[\w-._~:/?#[\]@!$&'()*+,;=%]+#?$/i)),
+    avatar: Joi.string().required().regex(/^((http|https):\/\/)(www\.)?([\w\W\d]{1,})(\.)([a-zA-Z]{1,10})([\w\W\d]{1,})?$/),
   }),
 }), updateAvatar);
 
