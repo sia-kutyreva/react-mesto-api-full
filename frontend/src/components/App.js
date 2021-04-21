@@ -27,17 +27,25 @@ function App() {
   const [isInfoTooltipOpen, setIsInfoTooltipOpen] = React.useState(false);
   const history = useHistory();
 
+  //React.useEffect(() => {
+  //  Promise.all([api.getUserInfo(localStorage.getItem('jwt')), api.getInitialCards(localStorage.getItem('jwt'))])
+  //    .then(([userInfo, cardsResult]) => {
+  //      setCards(cardsResult);
+  //      setCurrentUser(userInfo);
+  //    })
+  //    .catch((err) => console.log(`Ошибка получении данных: ${err}`))
+  //}, []);
+
   React.useEffect(() => {
-    Promise.all([api.getUserInfo(localStorage.getItem('jwt')), api.getInitialCards(localStorage.getItem('jwt'))])
+    checkToken();
+    if (loggedIn) {
+      Promise.all([api.getUserInfo(localStorage.getItem('jwt')), api.getInitialCards(localStorage.getItem('jwt'))])
       .then(([userInfo, cardsResult]) => {
         setCards(cardsResult);
         setCurrentUser(userInfo);
       })
       .catch((err) => console.log(`Ошибка получении данных: ${err}`))
-  }, []);
-
-  React.useEffect(() => {
-    checkToken();
+    }
   }, [loggedIn, history])
 
   function handleCardLike(card) {
