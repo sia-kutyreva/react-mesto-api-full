@@ -34,7 +34,7 @@ function App() {
         setCurrentUser(userInfo);
       })
       .catch((err) => console.log(`Ошибка получении данных: ${err}`))
-  }, [loggedIn]);
+  }, []);
 
   React.useEffect(() => {
     checkToken();
@@ -193,7 +193,6 @@ function App() {
           if (res) {
             setCurrentUser(res);
             setLoggedIn(true);
-
             setLoggedInUserEmail(res.email);
             history.push("/user-cards");
           }
