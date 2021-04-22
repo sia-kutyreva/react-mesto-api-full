@@ -162,6 +162,7 @@ function App() {
   function onRegister(data) {
     userAuth.register( data )
       .then((res) => {
+        console.log(res)
         setIsInfoTooltipOpen(true);
         setSuccessfulRegistration(true);
         setLoggedIn(true);

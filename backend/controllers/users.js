@@ -24,7 +24,7 @@ const createUser = (req, res, next) => {
           password: hash,
         })
           .then((data) => {
-            res.status(200).send({ email: data.email });
+            res.status(200).send(data);
           })
           .catch(next));
     })
