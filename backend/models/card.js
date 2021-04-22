@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const validator = require('validator');
 
 const cardSchema = new mongoose.Schema({
   name: {
@@ -12,13 +13,7 @@ const cardSchema = new mongoose.Schema({
     required: true,
     validation: {
       validator(link) {
-        let valid = false;
-        const space = /\S/.test(link);
-        const mainLink = /^((http|https):\/\/)(www\.)?([\w\W\d]{1,})(\.)([a-zA-Z]{1,10})([\w\W\d]{1,})?$/.test(link);
-        if (!space && mainLink) {
-          valid = true;
-        }
-        return valid;
+        return validator.isURL(link);
       },
       massage: 'Некорректный URL карточки',
     },

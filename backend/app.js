@@ -3,7 +3,7 @@ require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-const { celebrate, Joi, errors } = require('celebrate');
+const { errors } = require('celebrate');
 const cors = require('cors');
 
 const NotFoundError = require('./errors/not-found-err');
@@ -14,6 +14,11 @@ const { createUser, login } = require('./controllers/users');
 const auth = require('./middlewere/auth');
 
 const { requestLogger, errorLogger } = require('./middlewere/logger');
+
+const {
+  createUserValidation,
+  loginValidation,
+} = require('./middlewere/dataValidation');
 
 const app = express();
 const { PORT = 3000 } = process.env;
@@ -53,23 +58,9 @@ app.get('/crash-test', () => {
   }, 0);
 });
 
-app.post('/signin', celebrate({
-  body: Joi.object().keys({
-    email: Joi.string().required().email(),
-    password: Joi.string().required().min(8),
-  }),
-}), login);
+app.post('/signin', loginValidation, login);
 
-app.post('/signup', celebrate({
-  headers: Joi.object().keys({}).unknown(true),
-  body: Joi.object().keys({
-    name: Joi.string().min(2).max(30),
-    email: Joi.string().required().email(),
-    password: Joi.string().required().min(8),
-    about: Joi.string().min(2).max(30),
-    avatar: Joi.string().pattern(new RegExp(/^(http|https):\/\/(www\.)?[\w-._~:/?#[\]@!$&'()*+,;=%]+#?$/i)),
-  }),
-}), createUser);
+app.post('/signup', createUserValidation, createUser);
 
 app.use('/', auth, usersRouter);
 app.use('/', auth, cardsRouter);

@@ -21,13 +21,7 @@ const userSchema = new mongoose.Schema({
     type: String,
     validation: {
       validator(link) {
-        let valid = false;
-        const space = /\S/.test(link);
-        const mainLink = /(https?:\/\/)?([\w\\.]+)\.([a-z]{2,6}\.?)(\/[\w\\.]*)*\/?$\//.test(link);
-        if (!space && mainLink) {
-          valid = true;
-        }
-        return valid;
+        return validator.isURL(link);
       },
       massage: 'Некорректный URL ссылки на изображение',
     },
