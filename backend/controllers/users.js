@@ -24,7 +24,12 @@ const createUser = (req, res, next) => {
           password: hash,
         })
           .then((data) => {
-            res.status(200).send({ email: data.email });
+            const { userEmail, userPassword } = data.body;
+            User.findUserByCredentials(userEmail, userPassword)
+              .then((userData) => {
+                const token = jwt.sign({ _id: userData._id }, NODE_ENV === 'production' ? JWT_SECRET : 'dev-secret', { expiresIn: '7d' });
+                res.status(200).send({ token, email: data.email });
+              });
           })
           .catch(next));
     })
