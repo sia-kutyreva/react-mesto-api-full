@@ -15,7 +15,7 @@ const createUser = (req, res, next) => {
       if (user) {
         throw new ConflictError('Пользователь с таким email уже существует');
       }
-      return bcrypt.hash(password, 10)
+      bcrypt.hash(password, 10)
         .then((hash) => User.create({
           name,
           about,
@@ -25,7 +25,7 @@ const createUser = (req, res, next) => {
         })
           .then((data) => {
             const { userEmail, userPassword } = data.body;
-            User.findUserByCredentials(userEmail, userPassword)
+            return User.findUserByCredentials(userEmail, userPassword)
               .then((userData) => {
                 const token = jwt.sign({ _id: userData._id }, NODE_ENV === 'production' ? JWT_SECRET : 'dev-secret', { expiresIn: '7d' });
                 res.status(200).send({ token, email: data.email });
